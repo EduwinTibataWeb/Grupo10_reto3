@@ -21,7 +21,6 @@ import javax.persistence.Table;
  *
  * @author Eduwin Tibatá
  */
-
 @Entity
 @Table(name="category")
 public class Category implements Serializable {
@@ -35,7 +34,7 @@ public class Category implements Serializable {
 
     @OneToMany(cascade= {CascadeType.PERSIST}, mappedBy = "category")
     @JsonIgnoreProperties("category")
-    public List<Costume> costumes;
+    public List<Costume> costume;
 
     public Integer getId() {
         return id;
@@ -61,14 +60,13 @@ public class Category implements Serializable {
         this.description = description;
     }
 
-    public List<Costume> getCostumes() {
-        return costumes;
+    public List<Costume> getCostume() {
+        return costume;
     }
 
-    public void setCostumes(List<Costume> costumes) {
-        this.costumes = costumes;
+    public void setCostume(List<Costume> costume) {
+        this.costume = costume;
     }
-    
     
     
     

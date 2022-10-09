@@ -25,7 +25,8 @@ import javax.persistence.Table;
  * @author Eduwin Tibata
  */
 
-
+@Entity
+@Table(name = "Costume")
 public class Costume implements Serializable{
     @Id
     @Basic(optional=false)
@@ -33,7 +34,6 @@ public class Costume implements Serializable{
     private Integer id;
     private String name;
     private String brand;
-    @Column(name = "year")
     private Integer years;
     private String description;
     
@@ -113,5 +113,6 @@ public class Costume implements Serializable{
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
     
 }
