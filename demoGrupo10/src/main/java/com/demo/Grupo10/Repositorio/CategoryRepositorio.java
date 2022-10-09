@@ -1,0 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.demo.Grupo10.Repositorio;
+
+import com.demo.Grupo10.Modelo.Category;
+import com.demo.Grupo10.Repositorio.crud.CategoryCrudRepositorio;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+/**
+ *
+ * @author Eduwin Tibata
+ */
+@Repository
+public class CategoryRepositorio {
+    @Autowired
+    private CategoryCrudRepositorio categoryCrudRepositorio;
+    
+    public List<Category> getAll(){
+        return (List<Category>) categoryCrudRepositorio.findAll();
+    }
+    
+    public Optional<Category> getCategory(int id){
+        return categoryCrudRepositorio.findById(id);
+    }
+    
+    public Category save(Category p){
+        return categoryCrudRepositorio.save(p);
+    }
+}
