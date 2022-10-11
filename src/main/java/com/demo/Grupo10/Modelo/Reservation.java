@@ -41,6 +41,10 @@ public class Reservation implements Serializable{
     @JsonIgnoreProperties({"messages","reservations"})
     private Costume costume;
     
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
+    @JsonIgnoreProperties({"client", "costume"})
+    private List<Message> messages;
+    
     @ManyToOne
     @JoinColumn(name = "clientId")
     @JsonIgnoreProperties({"reservations","messages"})
@@ -88,6 +92,14 @@ public class Reservation implements Serializable{
         this.costume = costume;
     }
 
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
     public Client getClient() {
         return client;
     }
@@ -103,5 +115,7 @@ public class Reservation implements Serializable{
     public void setScore(String score) {
         this.score = score;
     }
+
+    
     
 }
