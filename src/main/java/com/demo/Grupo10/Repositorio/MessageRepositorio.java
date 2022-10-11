@@ -30,4 +30,8 @@ public class MessageRepositorio {
     public Message save(Message p){
         return messageCrudRepositorio.save(p);
     }
+    
+    public void delete(Message c){
+        messageCrudRepositorio.delete(c);
+    }
 }

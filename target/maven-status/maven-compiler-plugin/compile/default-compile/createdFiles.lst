@@ -1,6 +1,7 @@
 com\demo\Grupo10\Servicio\CostumeServicio.class
 com\demo\Grupo10\Servicio\MessageServicio.class
 com\demo\Grupo10\Controlador\CategoryControlador.class
+com\demo\Grupo10\Seguridad\SecurityAdapter.class
 com\demo\Grupo10\Servicio\ReservationServicio.class
 com\demo\Grupo10\Controlador\MessageControlador.class
 com\demo\Grupo10\Modelo\Costume.class

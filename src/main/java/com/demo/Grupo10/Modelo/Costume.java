@@ -7,6 +7,7 @@ package com.demo.Grupo10.Modelo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import com.sun.istack.NotNull;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -34,7 +35,10 @@ public class Costume implements Serializable{
     private Integer id;
     private String name;
     private String brand;
-    private Integer years;
+    
+    @NotNull
+    @Column(name="model")
+    private Integer year;
     private String description;
     
     @ManyToOne
@@ -74,12 +78,12 @@ public class Costume implements Serializable{
         this.brand = brand;
     }
 
-    public Integer getYears() {
-        return years;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setYears(Integer years) {
-        this.years = years;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public String getDescription() {

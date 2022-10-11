@@ -32,4 +32,8 @@ public class CategoryRepositorio {
     public Category save(Category p){
         return categoryCrudRepositorio.save(p);
     }
+    
+    public void delete(Category c){
+        categoryCrudRepositorio.delete(c);
+    }
 }

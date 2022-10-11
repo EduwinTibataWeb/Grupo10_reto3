@@ -40,4 +40,35 @@ public class CostumeServicio {
             }
         }
     }
+    
+    public Costume update(Costume c){
+        if(c.getId()!=null){
+            Optional<Costume>g=costumeRepositorio.getCostume(c.getId());
+            if(!g.isEmpty()){
+                if(c.getName()!=null){
+                    g.get().setName(c.getName());
+                }
+                if(c.getBrand()!=null){
+                    g.get().setBrand(c.getBrand());
+                }
+                if(c.getYear()!=null){
+                    g.get().setYear(c.getYear());
+                }
+                if(c.getDescription()!=null){
+                    g.get().setDescription(c.getDescription());
+                }
+                return costumeRepositorio.save(g.get());
+            }
+        }
+        return c;
+    }                      
+    
+    public boolean deleteCostume(int id){
+        Optional<Costume> c=getCostume(id);
+        if(!c.isEmpty()){
+            costumeRepositorio.delete(c.get());
+            return true;
+        }
+        return false;
+    }
 }
