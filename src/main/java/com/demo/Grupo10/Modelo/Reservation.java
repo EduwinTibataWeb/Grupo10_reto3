@@ -38,12 +38,9 @@ public class Reservation implements Serializable{
     
     @ManyToOne
     @JoinColumn(name = "costumeId")
-    @JsonIgnoreProperties({"messages","reservations"})
+    @JsonIgnoreProperties({"reservations"})
     private Costume costume;
-    
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
-    @JsonIgnoreProperties({"client", "costume"})
-    private List<Message> messages;
+   
     
     @ManyToOne
     @JoinColumn(name = "clientId")
@@ -90,14 +87,6 @@ public class Reservation implements Serializable{
 
     public void setCostume(Costume costume) {
         this.costume = costume;
-    }
-
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
     }
 
     public Client getClient() {
