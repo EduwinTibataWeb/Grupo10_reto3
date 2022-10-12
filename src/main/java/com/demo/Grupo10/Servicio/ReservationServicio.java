@@ -61,12 +61,11 @@ public class ReservationServicio {
         return c;
     }
     //Forma 2
-    public boolean deleteReservation(int id){
-        Optional<Reservation> c=getReservation(id);
-        if(!c.isEmpty()){
-            reservationRepositorio.delete(c.get());
+    public boolean deleteReservation (int id){
+        Boolean d = getReservation(id).map(reservation -> {
+            reservationRepositorio.delete(reservation);
             return true;
-        }
-        return false;
+        }).orElse(false);
+        return d;
     }
 }

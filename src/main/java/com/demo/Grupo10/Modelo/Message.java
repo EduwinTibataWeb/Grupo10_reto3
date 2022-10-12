@@ -35,8 +35,6 @@ public class Message implements Serializable{
     @JsonIgnoreProperties({"messages","reservations"})
     private Costume costume;
     
-    
-    
     @ManyToOne
     @JoinColumn(name = "clientId")
     @JsonIgnoreProperties({"messages","reservations"})

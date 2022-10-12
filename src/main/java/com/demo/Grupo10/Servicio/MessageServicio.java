@@ -55,12 +55,11 @@ public class MessageServicio {
         return c;
     }
     //Forma 2
-    public boolean deleteMessage(int id){
-        Optional<Message> c=getMessage(id);
-        if(!c.isEmpty()){
-            messageRepositorio.delete(c.get());
+    public boolean deleteMessage (int id){
+        Boolean d = getMessage(id).map(message -> {
+            messageRepositorio.delete(message);
             return true;
-        }
-        return false;
+        }).orElse(false);
+        return d;
     }
 }

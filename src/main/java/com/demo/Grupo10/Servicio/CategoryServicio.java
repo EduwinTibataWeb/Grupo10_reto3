@@ -57,13 +57,12 @@ public class CategoryServicio {
         }
         return category;
     }
-    //Forma 2
-    public boolean deleteCategory(int id){
-        Optional<Category> c=getCategory(id);
-        if(!c.isEmpty()){
-            categoryRepositorio.delete(c.get());
+    
+    public boolean deleteCategory (int id){
+        Boolean d = getCategory(id).map(category -> {
+            categoryRepositorio.delete(category);
             return true;
-        }
-        return false;
+        }).orElse(false);
+        return d;
     }
 }

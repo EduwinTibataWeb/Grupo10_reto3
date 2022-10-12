@@ -63,12 +63,11 @@ public class CostumeServicio {
         return c;
     }                      
     
-    public boolean deleteCostume(int id){
-        Optional<Costume> c=getCostume(id);
-        if(!c.isEmpty()){
-            costumeRepositorio.delete(c.get());
+    public boolean deleteCostume (int id){
+        Boolean d = getCostume(id).map(costume -> {
+            costumeRepositorio.delete(costume);
             return true;
-        }
-        return false;
+        }).orElse(false);
+        return d;
     }
 }
