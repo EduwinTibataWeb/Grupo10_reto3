@@ -9,12 +9,14 @@ com\demo\Grupo10\Controlador\ReservationControlador.class
 com\demo\Grupo10\Repositorio\crud\ClientCrudRepositorio.class
 com\demo\Grupo10\Repositorio\ClientRepositorio.class
 com\demo\Grupo10\Repositorio\MessageRepositorio.class
+com\demo\Grupo10\Modelo\DTOs\CountClient.class
 com\demo\Grupo10\Controlador\CostumeControlador.class
 com\demo\Grupo10\Modelo\Message.class
 com\demo\Grupo10\Controlador\ClientControlador.class
 com\demo\Grupo10\Grupo10Application.class
 com\demo\Grupo10\Modelo\Client.class
 com\demo\Grupo10\Modelo\Reservation.class
+com\demo\Grupo10\Modelo\DTOs\CountStatus.class
 com\demo\Grupo10\Repositorio\crud\CategoryCrudRepositorio.class
 com\demo\Grupo10\Repositorio\ReservationRepositorio.class
 com\demo\Grupo10\Modelo\Category.class

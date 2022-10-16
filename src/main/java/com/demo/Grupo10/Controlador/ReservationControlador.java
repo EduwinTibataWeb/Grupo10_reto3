@@ -5,6 +5,8 @@
  */
 package com.demo.Grupo10.Controlador;
 
+import com.demo.Grupo10.Modelo.DTOs.CountClient;
+import com.demo.Grupo10.Modelo.DTOs.CountStatus;
 import com.demo.Grupo10.Modelo.Reservation;
 import com.demo.Grupo10.Servicio.ReservationServicio;
 import java.util.List;
@@ -61,4 +63,18 @@ public class ReservationControlador {
         return reservationServicio.deleteReservation(id);
     }
     
+    @GetMapping("/report-clients")
+    public List<CountClient> getClientesTop(){
+        return reservationServicio.getClientesTop();
+    }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservationsBetweenDates(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo){
+        return reservationServicio.getReservationsBetweenDates(dateOne, dateTwo);
+    }
+    
+    @GetMapping("/report-status")
+    public CountStatus getReportStatus(){
+        return reservationServicio.getReservationsStatus();
+    }
 }
