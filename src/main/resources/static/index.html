@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/aad879c3d8.js" crossorigin="anonymous"></script>
 </head>
@@ -21,56 +22,28 @@
             </div>
         </div>       
         <ul class="menu_lista">
-            <li><a href="#" class="active"> <i class="fa-solid fa-layer-group"></i> Categorías</a></li>
+            <li><a href="categorias.html" class="active"> <i class="fa-solid fa-layer-group"></i> Categorías</a></li>
             <li><a href="disfraz.html" > <i class="fa-solid fa-masks-theater"></i> Disfraz</a></li>
             <li><a href="clientes.html"> <i class="fa-solid fa-user"></i> Clientes</a></li>
             <li><a href="mensajes.html"> <i class="fa-solid fa-comments"></i> Mensajes</a></li>
             <li><a href="reservas.html"> <i class="fa-solid fa-calendar-days"></i> Reservas</a></li>
         </ul>
     </nav>
-    <header>
-        <h1><i class="fa-solid fa-layer-group"></i> Categorías</h1>
-    </header>
     <main class="content">
-        <div class="cont_formulario">
-            <div class="all_formulario">
-                <div class="cerrar_pop"><i class="fa-solid fa-xmark"></i></div>
-                <form action="" class="formulario">
-                    <label class="ocultoForm" for="idCategory">Id</label><br><input class="ocultoForm" type="number" id="idCategory"  disabled><br>
-                    <label for="nameCategory">Name</label><br><input type="text" id="nameCategory"><br>
-                    <label for="descriptionCategory">Description</label><br><input type="text" id="descriptionCategory"><br>
-                    <label class="ocultoForm" for="costumeCategory">Dizfras</label><br><input class="ocultoForm" type="text" id="costumeCategory" disabled><br>
-                </form>
-                <div class="botones">
-                    <div onclick="guardarCategory()">Guardar Categoria</div>
-                </div>
+        <div class="cont_github">
+            <div class="cont_git">
+                <i class="fa-solid fa-masks-theater"></i>
+                <h1>Bienvenido a la app de Dizfras</h1>
+                <p>Para entrar, inicia sesión con Git</p>
+                <a href="/oauth2/authorization/github"><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
-        </div>
-        <div class="clientes">
-            <table class="tablaLista" id="tablaClientes">
-                <tr>
-                    <td>
-                        <table cellspacing="0" cellpadding="1" border="0">
-                            <tr><th>ID</th><th>NAME</th><th>DESCRIPTION</th><th>COSTUMES</th><th>BORRAR</th></tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="cont_tabla">
-                            <table id="listaClientes" class="tablaLista">
-                                <tr onclick="leerCategory()" class="leerTabla"><td  colspan="2"><h2>Click para ver Tabla</h2></td></tr>
-                            </table>
-                        </div>
-                    </td>
-                </tr>
-            </table>
         </div>
     </main>
     <footer>
 
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
